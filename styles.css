@@ -1,0 +1,147 @@
+/*applies style to entire html page*/
+html {
+    text-align: center;
+    font-family: monospace;
+}
+
+/* sets styles to 'main id = calc' */
+#calc {
+    display: flex;
+    /*sets min, so browser doesnt make everything too small*/
+    min-height: 95vh;
+    /*alins in center of page*/
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    /* defines max height so browser doesnt enlarge things*/
+    height: 100vh;
+    /*hides spillage outside of main calc div*/
+    overflow: hidden;
+    background-color: azure;
+}
+
+/*styles 'div id = container'*/
+#container {
+    background-color: black;
+    border: 10px solid rgba(47, 47, 47, 1);
+    border-radius: 4px;
+    /*makes a grid*/
+    display: grid;
+    /*defines how many buttons in rows and columns in grid*/
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    /*gap inbetween the buttons*/
+    gap: 2px;
+}
+
+/* styles for display at the top of calculator*/
+#display {
+    grid-column: 1 / -1;
+    background-color: silver;
+    display: flex;
+    /* vertical direction*/
+    flex-direction: column;
+    /* even space around each button*/
+    justify-content: space-around;
+    /* aligns items (numbers) to the right of the display -- like a normal calculator*/
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 5.5em;
+    font-weight: initial;
+    text-shadow: 1.3px 1.3px gray;
+    /* space between edge of text and the edge of display*/
+    margin: 5px;
+}
+
+/* styles for ALL buttons*/
+button {
+    margin: 1px;
+    border-radius: 5%;
+    border: none;
+    font-weight: initial;
+    font-size: 2em;
+    font-family: monospace;
+    color: black;
+}
+
+/* spans the zero button (0) to take up 2 grid spots (doubles the width)*/
+#zero {
+    grid-column: span 2;
+}
+
+/* style for all operators (+, -, *, /) */
+.operator {
+    background-color: blue;
+}
+
+/* changes background color once you click the button*/
+/* :focus keeps the color change until focus is shifted*/
+.operator:focus {
+    background-color: peachpuff;
+}
+
+/* style for = button*/
+.equals {
+    background-color: red;
+}
+
+/* changes background color once you click the = button*/
+/* :active only changes background color WHILE you hold the button down. then changes back to initial background color*/
+.equals:active {
+    background-color: lightblue;
+}
+
+/* background color for all operands (numbers)*/
+.operand {
+    background-color: lightgreen;
+}
+
+/* changes background color once you click the number buttons*/
+.operand:active {
+    background-color: limegreen;
+}
+
+/* background color for the . */
+.decimal {
+    background-color: mediumaquamarine;
+}
+
+/* Background color WHILE holding button down*/
+.decimal:active {
+    background-color: mediumturquoise;
+}
+
+/* background color for clear "C" button*/
+.clear {
+    background-color: mintcream;
+}
+
+.clear:active {
+    background-color: mediumturquoise;
+}
+
+/* background color for sign button ( +/-) */
+/* spans the button 2 grid squares wide */
+.sign {
+    background-color: mintcream;
+    grid-column: span 2;
+}
+
+.sign:active {
+    background-color: mediumturquoise;
+}
+
+/*.percent {
+    background-color: midnightblue;
+}
+
+.percent:active {
+    background-color: mintcream;
+}*/
+
+
+
+
+
+
+
